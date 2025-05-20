@@ -187,6 +187,7 @@ const Popup = ({ event, onClose }: PopupProps) => {
 
 const Events = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredEvent, setHoveredEvent] = useState<number | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -251,7 +252,7 @@ const Events = () => {
   };
 
   const cardVariants = {
-    initial: { 
+    rest: { 
       scale: 1,
       boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
     },
@@ -263,7 +264,7 @@ const Events = () => {
   };
 
   const imageVariants = {
-    initial: { scale: 1 },
+    rest: { scale: 1 },
     hover: { scale: 1.08, transition: { duration: 0.8 } }
   };
 
@@ -424,66 +425,81 @@ const Events = () => {
           </motion.div>
 
           {/* Events Grid */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {eventsData.map((event) => (
-              <motion.div
-                key={event.id}
-                variants={cardVariants}
-                initial="initial"
-                whileHover="hover"
-                className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/10 transition-all duration-300"
-                style={{ 
-                  perspective: "1000px",
-                  transformStyle: "preserve-3d"
-                }}
-                onClick={() => {
-                  setSelectedEvent(event);
-                  setIsPopupOpen(true);
-                }}
-              >
-                <div className="relative h-52 overflow-hidden">
-                  {/* Event image with hover effect */}
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key="events-grid" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {eventsData.map((event) => (
+                <motion.div
+                  key={event.id}
+                  variants={itemVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  animate={hoveredEvent === event.id ? "hover" : "rest"}
+                  onHoverStart={() => setHoveredEvent(event.id)}
+                  onHoverEnd={() => setHoveredEvent(null)}
+                  className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/10 transition-all duration-300"
+                  style={{ 
+                    perspective: "1000px",
+                    transformStyle: "preserve-3d"
+                  }}
+                >
+                  <div className="relative h-52 overflow-hidden">
                   <motion.img 
                     src={event.image} 
                     alt={event.title}
                     className="w-full h-full object-cover"
                     variants={imageVariants}
-                    initial="initial"
-                    whileHover="hover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  <div className="absolute bottom-3 left-4">
-                    <span className="px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full">{event.category}</span>
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+                      initial={{ opacity: 0.3 }}
+                      whileHover={{ opacity: 0.5 }}
+                    />
+                  <motion.div 
+                    className="absolute top-3 right-3 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full shadow-md"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {event.category}
+                  </motion.div>
+                    <motion.div 
+                      className="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      <div className="text-white text-sm">{event.date}</div>
+                    </motion.div>
                   </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-white">{event.title}</h3>
-                  <p className="text-gray-400 text-sm line-clamp-2 mb-4">{event.description}</p>
                   
-                  <div className="flex items-center mb-4">
-                    <div className="text-sm text-gray-400">{event.date}</div>
-                  </div>
-                  
-                  <motion.a 
-                    href="#" 
-                    className="inline-flex items-center text-primary text-sm font-medium group"
+                  <div className="p-6 bg-gradient-to-t from-white/5 to-transparent">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                    {event.title}
+                  </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                    {event.description}
+                  </p>
+                    <motion.button 
+                      className="inline-flex items-center text-primary text-sm font-medium transition-all duration-300 group"
                     whileHover={{ x: 5 }}
                     initial={{ x: 0 }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedEvent(event);
+                      setIsPopupOpen(true);
+                    }}
                   >
                     Learn more
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                      <svg className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </motion.a>
+                    </motion.button>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </AnimatePresence>
 
           {/* Render Popup */}
           {isPopupOpen && (
@@ -637,6 +653,7 @@ const Events = () => {
                             </svg>
                           </motion.a>
                         </motion.div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -692,66 +709,9 @@ const Events = () => {
                             </svg>
                           </motion.a>
                         </motion.div>
-                    </div>
-                    <div className="md:pl-12 pl-4"></div>
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  variants={itemVariants} 
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 30 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  className="relative"
-                >
-                  <motion.div 
-                      className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-primary to-blue-500 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center z-10"
-                    whileInView={{
-                      scale: [0, 1.5, 1],
-                      opacity: [0, 1, 1]
-                    }}
-                    transition={{ duration: 0.5 }}
-                  >
-                      <motion.div 
-                        className="w-3 h-3 bg-white rounded-full"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [0.7, 1, 0.7]
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          repeatType: "reverse"
-                        }}
-                      ></motion.div>
-                  </motion.div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="md:text-right md:pr-12 pl-4 md:pl-0"></div>
-                    <div className="md:pl-12 pl-4">
-                      <motion.div 
-                          className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl transition-all duration-300 hover:bg-white/10"
-                          whileHover={{ 
-                            scale: 1.03, 
-                            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)"
-                          }}
-                        >
-                          <div className="text-primary font-mono text-sm mb-2">OCTOBER 2023</div>
-                          <h4 className="text-xl font-bold mb-2 text-white">CTF</h4>
-                          <p className="text-gray-300 text-sm">Capture The Flag cybersecurity competition with challenging puzzles.</p>
-                          <motion.a 
-                            href="#" 
-                            className="inline-flex items-center mt-3 text-primary text-sm font-medium group"
-                            whileHover={{ x: 3 }}
-                          >
-                            View event
-                            <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
-                          </motion.a>
-                        </motion.div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                   
                   {/* Future events indicator */}
                   <motion.div 

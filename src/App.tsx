@@ -13,6 +13,9 @@ function App() {
   const [showDialog, setShowDialog] = useState(false);
 
   useEffect(() => {
+    // Add smooth scroll behavior to the entire document
+    document.documentElement.style.scrollBehavior = "smooth";
+    
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoaded(true);
@@ -22,14 +25,17 @@ function App() {
       }, 1000);
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.documentElement.style.scrollBehavior = "";
+    };
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-x-hidden">
+    <main className="relative min-h-screen bg-[#0A0A0A] text-white overflow-x-hidden">
       {/* Loading Screen */}
       {!isLoaded && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0A0A0A]">
           <div className="flex flex-col items-center">
             <div className="mb-4 flex space-x-1">
               <span className="inline-block w-4 h-4 bg-red-500 rounded-sm animate-pulse"></span>
@@ -48,20 +54,35 @@ function App() {
         {/* Navbar */}
         <Navbar />
         
-        {/* Hero Section */}
-        <Hero />
+        {/* Sections with improved transitions */}
+        <div className="sections-container relative">
+          {/* Hero Section */}
+          <Hero />
 
-        {/* About Section */}
-        <About />
+          {/* About Section with overlap for smooth transition */}
+          <div className="section-transition">
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-transparent z-10"></div>
+            <About />
+          </div>
 
-        {/* Events Section */}
-        <Events />
+          {/* Events Section with overlap for smooth transition */}
+          <div className="section-transition">
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-transparent z-10"></div>
+            <Events />
+          </div>
 
-        {/* Team Section */}
-        <Team />
+          {/* Team Section with overlap for smooth transition */}
+          <div className="section-transition">
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-transparent z-10"></div>
+            <Team />
+          </div>
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer with overlap for smooth transition */}
+          <div className="section-transition">
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-transparent z-10"></div>
+            <Footer />
+          </div>
+        </div>
 
         {/* Retro Dialog */}
         {showDialog && (

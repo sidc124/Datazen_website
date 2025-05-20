@@ -1,0 +1,314 @@
+[
+    {
+      "id": 1,
+      "name": "Harsh Nagrani",
+      "position": "Council Head",
+      "description": "Chief of Breaking Things and Fixing Them at 2 AM",
+      "photo": "img/teamMembers/Harsh Nagrani-modified.png",
+      "github": "https://github.com/HarshNagrani9",
+      "linkedin": "https://www.linkedin.com/in/harsh-nagrani-1ab98623a/",
+      "instagram": "https://www.instagram.com/harshnagrani009/"
+    },
+    {
+      "id": 2,
+      "name": "Riya Shrivastava",
+      "position": "Council Head",
+      "description": "Steering the ship, barely",
+      "photo": "img/teamMembers/Riya Shrivastava.jpg",
+      "github": "https://github.com/riya-020",
+      "linkedin": "https://www.linkedin.com/in/riya-shrivastava-b9b38b296/",
+      "instagram": "https://www.instagram.com/riyaa.02/"
+    },
+    {
+      "id": 3,
+      "name": "Vedant Shetty",
+      "position": "Tech Head",
+      "description": "Name's PyKnight73",
+      "photo": "img/teamMembers/VedantShetty_TECH-HEAD.png",
+      "github": "https://github.com/PyKnight-vedant",
+      "linkedin": "https://www.linkedin.com/in/vedant-shetty-315853287/",
+      "instagram": "https://www.instagram.com/veder73/profilecard/?igsh=MWYyaTBoNzZuc2N4Mw=="
+    },
+    {
+      "id": 4,
+      "name": "Aahan Shetye",
+      "position": "Tech Member",
+      "description": "It is what it is",
+      "photo": "img/teamMembers/Aahan_Shetye_Tech_Team.png",
+      "github": "https://github.com/aahanshetye",
+      "linkedin": "https://www.linkedin.com/in/aahan-shetye",
+      "instagram": "https://www.instagram.com/aa.h.an/"
+    },
+    {
+      "id": 5,
+      "name": "Arya Madhani",
+      "position": "Tech Member",
+      "description": "I am always... plotting .",
+      "photo": "img/teamMembers/Arya_Madhani_TechTeam.jpg",
+      "github": "https://github.com/Arya1754",
+      "linkedin": "https://www.linkedin.com/in/arya-madhani-83a902257/",
+      "instagram": "https://www.instagram.com/madhani_arya?igsh=MWJwOGllcGk1azFkeA=="
+    },
+    {
+      "id": 6,
+      "name": "Mann Shah",
+      "position": "Tech Member",
+      "description": "Designing user-friendly and engaging experiences.",
+      "photo": "img/teamMembers/Mann Shah.jpg",
+      "github": "https://github.com/mannn13",
+      "linkedin": "https://www.linkedin.com/in/mann-shah-3940a3278/",
+      "instagram": "https://www.instagram.com/m.annn13/"
+    },
+    {
+      "id": 7,
+      "name": "Hriday Shah",
+      "position": "Tech Member",
+      "description": "Introverted for a reason",
+      "photo": "img/teamMembers/Hriday Shah.png",
+      "github": "https://github.com/cinnamon1952",
+      "linkedin": "https://www.linkedin.com/in/hriday-shah-09b33b288/",
+      "instagram": "https://www.instagram.com/hriday_shah05/"
+    },
+    {
+      "id": 8,
+      "name": "Jiya Shetty",
+      "position": "PR and Marketing Head",
+      "description": "Certified Yapper",
+      "photo": "img/teamMembers/Jiya Shetty.jpg",
+      "github": "https://github.com/jiyashetty28",
+      "linkedin": "https://www.linkedin.com/in/jiya-shetty-640b04252/",
+      "instagram": "https://www.instagram.com/jiyaa.28/profilecard/?igsh=c2F4cGc5MDV4d3Ni"
+    },
+    {
+      "id": 9,
+      "name": "Siddharth Chintawar ",
+      "position": "PR and Marketing Member",
+      "description": "Applying physics principles to engineering solutions.",
+      "photo": "img/teamMembers/Siddharth Chintawar.jpg",
+      "github": "https://github.com/isaac",
+      "linkedin": "https://www.linkedin.com/in/siddharth-chintawar-a76366291/",
+      "instagram": "https://www.instagram.com/godknowssid/"
+    },
+    {
+      "id": 10,
+      "name": "Shaurya Kumar Roy",
+      "position": "PR and Marketing Member",
+      "description": "Dedicated - Diligent - Devoted",
+      "photo": "img/teamMembers/shauryakroy.jpg",
+      "github": "https://github.com/jack",
+      "linkedin": "https://linkedin.com",
+      "instagram": "https://www.instagram.com/shauryakroy"
+    },
+    {
+      "id": 11,
+      "name": "Prekshya Joshi",
+      "position": "PR and Marketing Member",
+      "description": "Creating and planning content strategies.",
+      "photo": "img/teamMembers/PrekshyaJoshi.jpg",
+      "github": "https://github.com/prekshyaaa",
+      "linkedin": "https://www.linkedin.com/in/prekshya-joshi-ba5644287",
+      "instagram": "https://www.instagram.com/prekshyaa_20/"
+    },
+    {
+      "id": 12,
+      "name": "Gaurang Mavle",
+      "position": "Creative Head",
+      "description": "Ensuring the safety and security of systems.",
+      "photo": "/img/teamMembers/Gaurang_Mavle.jpg",
+      "github": "https://github.com/liam",
+      "linkedin": "https://www.linkedin.com/in/gaurang-mavle-31397b241/",
+      "instagram": "https://www.instagram.com/gaurang._.mavle_/"
+    },
+    {
+      "id": 13,
+      "name": "Rida Nakhuda",
+      "position": "Creative Member",
+      "description": "Making tech look good",
+      "photo": "img/teamMembers/Rida Nakhuda.jpg",
+      "github": "https://github.com/Rida-14",
+      "linkedin": "https://www.linkedin.com/in/rida-nakhuda-5b019728a/",
+      "instagram": "https://www.instagram.com/rida.14_/"
+    },
+    {
+      "id": 14,
+      "name": "Swadha Kumari",
+      "position": "Creative Member",
+      "description": "Designing seamless digital experiences.",
+      "photo": "img/teamMembers/swadha pic.jpg",
+      "github": "https://github.com/Swadha06",
+      "linkedin": "https://www.linkedin.com/in/swadha-kumari-525a61294/",
+      "instagram": "https://www.instagram.com/swaddhaa._/"
+    },
+    {
+      "id": 15,
+      "name": "Meet Satra",
+      "position": "Creative Member",
+      "description": "50%sweetness 50%savage",
+      "photo": "img/teamMembers/Meet Satra.png",
+      "github": "https://github.com/Meet17-hub",
+      "linkedin": "https://in.linkedin.com/in/meet-satra-637445311",
+      "instagram": "https://www.instagram.com/meet.satra.503/profilecard/?igsh=MThyZmJuc3JoZHh6Mg=="
+    },
+    {
+      "id": 16,
+      "name": "Hiranya Patil",
+      "position": "Operations Head",
+      "description": "Managing employee relations and recruitment.",
+      "photo": "img/teamMembers/Hiranya Patil.jpg",
+      "github": "https://github.com/Hiranya-Patil",
+      "linkedin": "https://in.linkedin.com/in/hiranyapatil",
+      "instagram": "https://in.linkedin.com/in/hiranyapatil"
+    },
+    {
+      "id": 17,
+      "name": "Vriddhi Shetty",
+      "position": "Opertions Member",
+      "description": "unhinged",
+      "photo": "img/teamMembers/Vriddhi Shetty.jpg",
+      "github": "https://github.com/Vriddhis",
+      "linkedin": "https://www.linkedin.com/in/vriddhi-shetty-339378249/",
+      "instagram": "https://www.instagram.com/vriddhishettyy/"
+    },
+    {
+      "id": 18,
+      "name": "Ojas Keer",
+      "position": "Opertions Member",
+      "description": "I'm a bunny",
+      "photo": "img/teamMembers/Ojas Keer.jpg",
+      "github": "https://github.com/ojaskeer",
+      "linkedin": "https://www.linkedin.com/in/ojas-keer-3bb266244/",
+      "instagram": "https://www.instagram.com/ojaskeer?igsh=MXBvcGZ1MXF5Y3VwNg%3D%3D&utm_source=qr"
+    },
+      {
+        "id": 19,
+        "name": "Nidhi Shetty",
+        "position": "Operations Member",
+        "description": "Keepin' it real",
+        "photo": "img/teamMembers/Nidhi Shetty .jpg",
+        "github": "https://github.com/NidhiShetty3",
+        "linkedin": "https://www.linkedin.com/in/nidhi-shetty-b28733289",
+        "instagram": "https://www.instagram.com/_nidhi.shettyy/profilecard/?igsh=MWd4eGp3Z2o5ZjQ2Ng=="
+      },
+    {
+      "id": 20,
+      "name": "Jinay Bhatt",
+      "position": "FY Representative",
+      "description": "High on .py",
+      "photo": "img/teamMembers/Jinay Bhatt.png",
+      "github": "https://github.com/Jinay-26",
+      "linkedin": "https://www.linkedin.com/in/jinay-bhatt-8a423b320/",
+      "instagram": "https://www.instagram.com/jinay.26/"
+    },
+    {
+      "id": 21,
+      "name": "Sumit Borade",
+      "position": "FY Representative",
+      "description": "Stats is Life",
+      "photo": "img/teamMembers/Sumit_Borade.jpg",
+      "github": "https://github.com/username",
+      "linkedin": "https://www.linkedin.com/in/sumit-borade-7534681b3/",
+      "instagram": "https://www.instagram.com/sumit.24_7?igsh=MTF6Y2dyd28wcjg5ZA=="
+    },    
+    {
+      "id": 22,
+      "name": "Mrinali Sharma",
+      "position": "FY Representative",
+      "description": "That's the move, Chief ",
+      "photo": "img/teamMembers/Mrinali Sharma.jpg",
+      "github": "https://github.com/mrinalishh",
+      "linkedin": "https://www.linkedin.com/in/mrinali-sharma-353b92327/",
+      "instagram": "https://www.instagram.com/mrinaliisharma?igsh=MTRocWI5a2s2eDI0bA=="
+    },
+    {
+      "id": 23,
+      "name": "Akshita Sabat",
+      "position": "FY Representative",
+      "description": "Comfortably Numb",
+      "photo": "img/teamMembers/Akshita Sabat.jpg",
+      "github": "https://github.com/Akshitasabat",
+      "linkedin": "https://www.linkedin.com/in/akshita-sabat-132585312/r",
+      "instagram": "https://www.instagram.com/akshitasabat/"
+    },
+    {
+      "id": 24,
+      "name": "Suryaansh Jain",
+      "position": "FY Representative",
+      "description": "Doin it for the plot",
+      "photo": "img/teamMembers/Suryansh Jain.jpg",
+      "github": "https://github.com/suryaansh-jain",
+      "linkedin": "https://in.linkedin.com/in/suryaansh-jain-61b74b28a",
+      "instagram": "https://www.instagram.com/suryaansh._._/profilecard/?igsh=cmw0OXh4ZHY4Nzlm"
+    },
+    {
+      "id": 25,
+      "name": "Abhishek Joshi",
+      "position": "FY Representative",
+      "description": "Fueled by Coffee & Code.",
+      "photo": "img/teamMembers/Abhishek Joshi.png",
+      "github": "https://github.com/ketanabhishek8",
+      "linkedin": "https://www.linkedin.com/in/abhishek-joshi-83b482340/",
+      "instagram": "https://www.instagram.com/ketanabhishek8/profilecard/?igsh=Mzhjc2swMjdmOXc4"
+    },
+    {
+      "id": 26,
+      "name": "Riya Gupta",
+      "position": "FY Representative",
+      "description": "The cat is my spirit animal",
+      "photo": "img/teamMembers/Riya Gupta.jpg",
+      "github": "https://github.com/riyaa-g",
+      "linkedin": "https://www.linkedin.com/in/riyagupta70/",
+      "instagram": "https://www.instagram.com/_riyaya_07/"
+    },
+    {
+      "id": 27,
+      "name": "Naman Lodha",
+      "position": "FY Representative",
+      "description": "good mornin",
+      "photo": "img/teamMembers/Naman Lodha.png",
+      "github": "https://github.com/zayn",
+      "linkedin": "https://www.linkedin.com/in/lodhanaman",
+      "instagram": "https://www.instagram.com/naman.ld"
+    },
+    {
+      "id": 28,
+      "name": "Atharva Sawant",
+      "position": "FY Representative",
+      "description": "Great power, endless sarcasm.",
+      "photo": "img/teamMembers/Atharva Sawant.png",
+      "github": "https://github.com/atharvasawant",
+      "linkedin": "http://www.linkedin.com/in/atharva-sawant10",
+      "instagram": "https://www.instagram.com/athawastaken/"
+    },
+    {
+      "id": 29,
+      "name": "Gurkirat Kaur",
+      "position": "FY Representative",
+      "description": "Cosmic Wanderer",
+      "photo": "img/teamMembers/Gurkirat.jpg",
+      "github": "https://github.com/GurkiratKaur22",
+      "linkedin": "https://www.linkedin.com/in/gurkirat-kaur-b159a12b4/",
+      "instagram": "https://www.instagram.com/gurkirat_227/profilecard/?igsh=MXdoNDE5ZDhpYzc5cQ%3D%3D"
+    },
+    {
+      "id": 30,
+      "name": "Pratibha Singh",
+      "position": "FY Representative",
+      "description": "internal storage full",
+      "photo": "img/teamMembers/Pratibha Singh.PNG",
+      "github": "https://github.com/pratibhasoup",
+      "linkedin": "https://www.linkedin.com/in/pratibha-singh-76bb51340/",
+      "instagram": "https://www.instagram.com/pratibha.singhh/"
+    },
+    {
+      "id": 31,
+      "name": "Aryan Chaurasia",
+      "position": "FY Representative",
+      "description": "Turning caffeine into code",
+      "photo": "img/teamMembers/Aryan_Chaurasia.jpg", 
+      "github": "https://github.com/chaurasia-aryan",
+      "linkedin": "https://www.linkedin.com/in/aryan-chaurasia2005",
+      "instagram": "https://www.instagram.com/_aryanchaurasia_?igsh=YzljYTk1ODg3Zg=="
+    }
+    
+  ]
+  

@@ -60,7 +60,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  background-color: #000000;
+  background-color: #0A0A0A;
   color: #FFFFFF;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
@@ -121,6 +121,85 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #FFFFFF;
-    background-color: #000000;
+    background-color: #0A0A0A;
+  }
+}
+
+/* Improved transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+.sections-container {
+  position: relative;
+}
+
+.section-transition {
+  position: relative;
+  margin-top: -40px; /* Create a slight overlap between sections */
+}
+
+/* Scroll-based animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+/* Intersection observer animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth background transitions */
+.section {
+  position: relative;
+  transition: background-color 0.8s ease;
+}
+
+/* Improved gradient transitions */
+.gradient-transition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.gradient-transition-top {
+  top: 0;
+  background: linear-gradient(to bottom, #0A0A0A, transparent);
+}
+
+.gradient-transition-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #0A0A0A, transparent);
+}
+
+/* Additional responsive transition adjustments */
+@media (max-width: 768px) {
+  .section-transition {
+    margin-top: -20px; /* Less overlap on mobile */
+  }
+  
+  .gradient-transition {
+    height: 70px;
   }
 }

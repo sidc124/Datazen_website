@@ -160,147 +160,24 @@ const Hero = () => {
       id="home"
       ref={containerRef} 
       className={`relative min-h-screen flex flex-col items-center justify-center overflow-hidden ${
-        isDarkMode ? 'bg-[#0A0A0A]' : 'bg-[#f0f0f0]'
-      } crt-screen arcade-screen screen-glitch transition-colors duration-500`}
+        isDarkMode ? 'bg-gradient-to-b from-black via-[#0A0A0A] to-[#0A0A0A]' : 'bg-gradient-to-b from-gray-100 via-[#f0f0f0] to-[#f0f0f0]'
+      } transition-colors duration-500`}
     >
-      {/* Retro Background Effects - conditional based on theme */}
-      <div className={`absolute inset-0 ${isDarkMode ? 'retro-hero-bg' : 'retro-hero-bg-light'}`}>
-        {/* Main grid pattern */}
-        <div className="absolute inset-0 bg-[#0A0A0A]">
-          {/* Horizontal lines */}
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-linear-gradient(
-              0deg,
-              transparent,
-              transparent 39px,
-              rgba(255, 0, 0, 0.1) 39px,
-              rgba(255, 0, 0, 0.1) 40px
-            )`
-          }} />
-          
-          {/* Vertical lines */}
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-linear-gradient(
-              90deg,
-              transparent,
-              transparent 39px,
-              rgba(255, 0, 0, 0.1) 39px,
-              rgba(255, 0, 0, 0.1) 40px
-            )`
-          }} />
-
-          {/* Diagonal overlay */}
-          <div className="absolute inset-0 opacity-5" style={{
-            backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 20px,
-              rgba(255, 0, 0, 0.2) 20px,
-              rgba(255, 0, 0, 0.2) 40px
-            )`
-          }} />
-
-          {/* Subtle radial gradient for depth */}
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 70%)'
-          }} />
-        </div>
-
-        {/* Animated scan lines */}
-        <motion.div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              0deg,
-              transparent,
-              transparent 1px,
-              rgba(255, 0, 0, 0.05) 1px,
-              rgba(255, 0, 0, 0.05) 2px
-            )`,
-            backgroundSize: '100% 4px'
-          }}
-          animate={{
-            backgroundPosition: ['0px 0px', '0px 4px']
-          }}
-          transition={{
-            duration: 0.2,
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-        />
-
-        {/* Corner accent lines */}
-        {[
-          { position: 'top-0 left-0', rotate: '0deg' },
-          { position: 'top-0 right-0', rotate: '90deg' },
-          { position: 'bottom-0 right-0', rotate: '180deg' },
-          { position: 'bottom-0 left-0', rotate: '270deg' }
-        ].map((corner, index) => (
-          <motion.div
-            key={index}
-            className={`absolute ${corner.position} w-32 h-32`}
-            style={{ rotate: corner.rotate }}
-          >
-            <motion.div
-              className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-red-500/50 to-transparent w-full"
-              animate={{
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: index * 0.5
-              }}
-            />
-            <motion.div
-              className="absolute top-0 left-0 w-[2px] bg-gradient-to-b from-red-500/50 to-transparent h-full"
-              animate={{
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: index * 0.5 + 0.25
-              }}
-            />
-          </motion.div>
-        ))}
-
-        {/* Animated circuit paths */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute w-full h-full"
-            style={{
-              backgroundImage: `
-                linear-gradient(90deg, transparent 99%, rgba(255, 0, 0, 0.1) 100%),
-                linear-gradient(0deg, transparent 99%, rgba(255, 0, 0, 0.1) 100%)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-            animate={{
-              backgroundPosition: ['0px 0px', '40px 40px']
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear'
-            }}
-          />
-        </div>
-
-        {/* Subtle vignette effect */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%)'
-        }} />
+      {/* Refined background with subtle gradient */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: isDarkMode 
+            ? `radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.08), transparent 70%)`
+            : `radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.03), transparent 70%)`
+        }}/>
       </div>
-
-      {/* Enhanced Scanline Effect */}
-      <div className="absolute inset-0 pointer-events-none z-50 bg-gradient-to-b from-transparent via-black/5 to-transparent bg-size-200 animate-scan opacity-30" />
       
-      {/* Enhanced CRT Noise Effect */}
-      <div className="absolute inset-0 pointer-events-none z-40 opacity-[0.03] mix-blend-screen">
-        <div className="absolute inset-0 bg-noise animate-noise" />
-      </div>
+      {/* Subtle vignette effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-50" style={{
+        background: isDarkMode 
+          ? 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%)'
+          : 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.1) 100%)'
+      }} />
 
       {/* Main Content - Improved alignment */}
       <motion.div
@@ -887,6 +764,17 @@ const Hero = () => {
         />
         <span className="sr-only">Toggle theme</span>
       </motion.div>
+
+      {/* Remove the existing scroll indicator and replace with a clean fade-out effect */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-24 z-40 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, #0A0A0A, transparent)'
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      />
     </section>
   );
 };

@@ -73,49 +73,63 @@ const About = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#0A0A0A] py-20 px-4 relative overflow-hidden">
-      {/* Retro Background Grid */}
-      <div className="absolute inset-0 bg-[#0A0A0A]">
+    <section className="min-h-screen bg-gradient-to-b from-black/30 via-[#0A0A0A] to-[#0A0A0A] py-20 px-4 relative overflow-hidden section">
+      {/* Enhanced transition effect with fade in */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A] to-black/50 pointer-events-none"
+      />
+      
+      {/* More subtle background pattern with improved animation */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.05 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
+        className="absolute inset-0 pointer-events-none"
+      >
         <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 39px,
-            rgba(255, 0, 0, 0.3) 39px,
-            rgba(255, 0, 0, 0.3) 40px
-          )`
-        }} />
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 39px,
-            rgba(255, 0, 0, 0.1) 39px,
-            rgba(255, 0, 0, 0.1) 40px
-          )`
-        }} />
-      </div>
-
-      {/* Section Title */}
+          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.15), transparent 70%)`
+        }}/>
+      </motion.div>
+      
+      {/* Smooth gradient transitions */}
+      <div className="gradient-transition gradient-transition-top"></div>
+      <div className="gradient-transition gradient-transition-bottom"></div>
+      
+      {/* Section Title with staggered animation */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-5xl font-bold text-red-500 heading-8bit mb-4">
-          ABOUT US
-        </h2>
-        <motion.div 
-          className="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-red-500 to-transparent"
-          animate={{
-            opacity: [0.5, 1, 0.5],
-            scale: [1, 1.05, 1]
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.8, 
+            delay: 0.4,
+            ease: [0.1, 0.6, 0.3, 1] // Custom ease curve for smoother motion
           }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="text-5xl font-bold text-red-500 heading-8bit mb-4"
+        >
+          ABOUT US
+        </motion.h2>
+        <motion.div 
+          initial={{ width: 0, opacity: 0 }}
+          animate={{ width: "12rem", opacity: 1 }}
+          transition={{ 
+            duration: 1, 
+            delay: 0.7,
+            ease: "easeOut"
+          }}
+          className="h-1 mx-auto bg-gradient-to-r from-transparent via-red-500 to-transparent"
         />
       </motion.div>
 
-      {/* Shuffle Button */}
+      {/* Shuffle Button with improved animation */}
       <motion.button
         onClick={shuffleCards}
         className="relative mx-auto mb-12 block group"
