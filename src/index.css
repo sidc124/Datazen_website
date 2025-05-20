@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-black text-white min-h-screen m-0 font-sans;
+    @apply bg-background text-text min-h-screen m-0 font-sans scroll-smooth;
   }
 }
 
@@ -125,25 +125,51 @@ button {
   }
 }
 
-/* Improved transitions */
+/* Enhanced smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Accounts for fixed header */
 }
 
+/* Improved section transitions */
 .sections-container {
   position: relative;
+  overflow-x: hidden;
 }
 
 .section-transition {
   position: relative;
-  margin-top: -40px; /* Create a slight overlap between sections */
+  margin-top: -80px; /* Increased overlap between sections */
+  padding-top: 80px; /* Add padding to compensate for overlap */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-/* Scroll-based animations */
+/* Refined gradient transitions */
+.gradient-transition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px; /* Increased height for smoother transition */
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.8; /* Slightly more visible */
+}
+
+.gradient-transition-top {
+  top: 0;
+  background: linear-gradient(to bottom, var(--tw-gradient-from), transparent);
+}
+
+.gradient-transition-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, var(--tw-gradient-from), transparent);
+}
+
+/* Improved scroll-based animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -151,15 +177,25 @@ html {
   }
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.7s ease forwards;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Intersection observer animations */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Enhanced intersection observer animations */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.active {
@@ -167,39 +203,70 @@ html {
   transform: translateY(0);
 }
 
-/* Smooth background transitions */
+/* Section-to-section transition smoothing */
 .section {
   position: relative;
-  transition: background-color 0.8s ease;
+  transition: background-color 1s ease, transform 0.8s ease;
 }
 
-/* Improved gradient transitions */
-.gradient-transition {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 100px;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.gradient-transition-top {
-  top: 0;
-  background: linear-gradient(to bottom, #0A0A0A, transparent);
-}
-
-.gradient-transition-bottom {
-  bottom: 0;
-  background: linear-gradient(to top, #0A0A0A, transparent);
-}
-
-/* Additional responsive transition adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .section-transition {
-    margin-top: -20px; /* Less overlap on mobile */
+    margin-top: -40px;
+    padding-top: 40px;
   }
   
   .gradient-transition {
-    height: 70px;
+    height: 80px;
   }
+}
+
+/* Prevent content jumps during transitions */
+* {
+  backface-visibility: hidden;
+}
+
+/* Smooth element transitions */
+.animate-on-scroll {
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Staggered animations for lists and grids */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Delay for staggered items */
+@for $i from 1 through 20 {
+  .stagger-item:nth-child(#{$i}) {
+    transition-delay: #{$i * 0.05}s;
+  }
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
